@@ -6,6 +6,21 @@ from . import views
 app_name = "publicaciones"
 
 urlpatterns = [
+
+    path("", views.InicioView.as_view(), name="inicio"),
+
+    path(
+        "publicaciones/",
+        views.PublicacionListView.as_view(),
+        name="lista_publicaciones"
+    ),
+
+    path(
+        "publicaciones/<int:publicacion_id>/",
+        views.PublicacionDetailView.as_view(),
+        name="detalle_publicacion"
+    ),
+
     # TODO: Definir las tres rutas usando path() y .as_view()
     #
     # Rutas a implementar:
